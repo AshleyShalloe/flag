@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<style>
+    html {
+        font-size: 4pt;
+        overflow-x: scroll;
+    }
+
+    #flagdiv {
+        width: max-content;
+    }
+</style>
+
+<body>
+    <div id="flagdiv"></div>
+</body>
+<script>
+    'use strict'
+
+    var blueHeart = "🩵"
+    var pinkHeart = "🩷"
+    var whiteHeart = "🤍"
+
+    function generateFlag(width, rowsPerStripe) {
+        var flag = ""
+
+        flag += (blueHeart.repeat(width) + "<br>").repeat(rowsPerStripe)
+        flag += (pinkHeart.repeat(width) + "<br>").repeat(rowsPerStripe)
+        flag += (whiteHeart.repeat(width) + "<br>").repeat(rowsPerStripe)
+        flag += (pinkHeart.repeat(width) + "<br>").repeat(rowsPerStripe)
+        flag += (blueHeart.repeat(width) + "<br>").repeat(rowsPerStripe)
+
+        return flag
+    }
+
+    document.getElementById("flagdiv").innerHTML = generateFlag(100, 10)
+
+
+</script>
+
+</html>
